@@ -1,4 +1,8 @@
-FROM raphiz/drone-php:5.5.20-minimal
+FROM php:5.5.20
+
+# Install git
+RUN apt-get update -yqq
+RUN apt-get install git -yqq
 
 # Install composer
 RUN php -r "readfile('https://getcomposer.org/installer');" | php
